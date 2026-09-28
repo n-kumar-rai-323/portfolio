@@ -1,12 +1,8 @@
 import type { NextConfig } from 'next';
 
-// Set by CI when the site is served from a sub-path, e.g. "/portfolio" on GitHub Pages.
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
-// Static export so the site can be hosted on GitHub Pages.
+// Static export: the Docker image serves the files in /out with Nginx.
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath,
   images: { unoptimized: true },
   trailingSlash: true,
 };
