@@ -1,0 +1,47 @@
+# One-time reverse-proxy stack for the EC2 host: terminates TLS and gets a Let's Encrypt
+# certificate automatically for any container that sets VIRTUAL_HOST / LETSENCRYPT_HOST.
+#
+# Run once on the host:
+#   docker network create web
+#   docker compose -f docker-compose.proxy.yml up -d
+#
+# App containers (see .github/workflows/deploy.yml) join the "web" network and set those
+# env vars instead of publishing port 80/443 themselves, so this stack never needs to be
+# touched again when the app redeploys, and certificates renew themselves.
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy:1
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks: [web]
+
+  acme-companion:
+    image: nginxproxy/acme-companion:2
+    restart: unless-stopped
+    depends_on: [nginx-proxy]
+    environment:
+      NGINX_PROXY_CONTAINER: nginx-proxy
+    volumes:
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - acme:/etc/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks: [web]
+
+networks:
+  web:
+    external: true
+
+volumes:
+  certs:
+  vhost:
+  html:
+  acme:
