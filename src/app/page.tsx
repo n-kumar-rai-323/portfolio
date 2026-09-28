@@ -1,23 +1,30 @@
+import Navbar from '@/components/nav/Navbar';
+import ScrollProgress from '@/components/nav/ScrollProgress';
+import { NAV_LINKS } from '@/lib/nav';
+
 // Home page. Sections are added here one module at a time.
+// The placeholders below only exist so the navbar can be tested; each is replaced by its real module.
 export default function Home() {
   return (
-    <main id="main">
-      <section className="section">
+    <>
+      <ScrollProgress />
+      <header id="top" className="section" style={{ minHeight: '100vh', display: 'grid', alignItems: 'center' }}>
+        <Navbar />
         <div className="wrap">
-          <div className="sec-head">
-            <h1 className="sec-title">Module 1: foundation</h1>
-            <p className="sec-sub">Next.js setup, design tokens and shared styles. Sections come next.</p>
-          </div>
-          <div className="panel" style={{ padding: 24, marginTop: 40, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-            <a className="btn btn-primary" href="#">Primary button</a>
-            <a className="btn btn-ghost" href="#">Ghost button</a>
-            <button className="chip" type="button" style={{ '--c': 'var(--violet)' } as React.CSSProperties}>
-              <span className="d" />Chip
-            </button>
-            <ul className="tags"><li>React</li><li>Next.js</li><li>TypeScript</li></ul>
-          </div>
+          <h1 className="display">Module 2:<br /><span className="outline">navbar.</span></h1>
+          <p className="lede">Scroll down: the navbar sticks to the top, the active link lights up and the bar at the top fills.</p>
         </div>
-      </section>
-    </main>
+      </header>
+      <main id="main">
+        {NAV_LINKS.map(l => (
+          <section key={l.id} id={l.id} className="section" style={{ minHeight: '80vh' }}>
+            <div className="wrap">
+              <h2 className="sec-title">{l.label}</h2>
+              <p className="sec-sub">Placeholder. The real section arrives in its own module.</p>
+            </div>
+          </section>
+        ))}
+      </main>
+    </>
   );
 }

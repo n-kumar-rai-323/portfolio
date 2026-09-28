@@ -1,0 +1,26 @@
+/* ================= Progress bar ================= */
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70;
+  background: linear-gradient(90deg, var(--violet), var(--cyan));
+  transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+  box-shadow: 0 0 12px var(--cyan);
+}
+
+/* ================= Nav ================= */
+.nav { position: absolute; top: 0; left: 0; right: 0; z-index: 60; padding-top: env(safe-area-inset-top); }
+.nav.fixed {
+  position: fixed; background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid var(--line); animation: navIn .35s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes navIn { from { transform: translateY(-100%); } }
+.nav-in { display: flex; align-items: center; gap: 8px; height: 68px; }
+.logo { font-weight: 900; font-size: 1.3rem; letter-spacing: -.035em; text-decoration: none; margin-right: auto; }
+.logo span { color: var(--cyan); }
+.nav-links { display: flex; gap: 2px; list-style: none; margin: 0 8px 0 0; padding: 0; }
+.nav-links a { display: block; padding: 8px 12px; border-radius: 999px; text-decoration: none; color: var(--muted); font-weight: 500; font-size: .94rem; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--cyan-ink); }
+@media (max-width: 820px) { .nav-links a { padding: 8px 8px; font-size: .88rem; } }
+@media (max-width: 660px) { .nav-links a { padding: 8px 6px; font-size: .85rem; } }
+@media (max-width: 560px) { .nav-links { display: none; } }
