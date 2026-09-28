@@ -1,16 +1,21 @@
 import Hero from '@/components/hero/Hero';
+import Services from '@/components/services/Services';
 import ScrollProgress from '@/components/nav/ScrollProgress';
+import RevealObserver from '@/components/RevealObserver';
 import { NAV_LINKS } from '@/lib/nav';
 
+// Sections not built yet. Their placeholders keep the navbar links working until each module lands.
+const PENDING = NAV_LINKS.filter(l => l.id !== 'services');
+
 // Home page. Sections are added here one module at a time.
-// The placeholders below keep the navbar links working until each real section module lands.
 export default function Home() {
   return (
     <>
       <ScrollProgress />
       <Hero />
       <main id="main">
-        {NAV_LINKS.map(l => (
+        <Services />
+        {PENDING.map(l => (
           <section key={l.id} id={l.id} className="section" style={{ minHeight: '80vh' }}>
             <div className="wrap">
               <h2 className="sec-title">{l.label}</h2>
@@ -19,6 +24,7 @@ export default function Home() {
           </section>
         ))}
       </main>
+      <RevealObserver />
     </>
   );
 }
