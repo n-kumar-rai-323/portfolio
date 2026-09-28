@@ -1,0 +1,66 @@
+import { SITE, DEMO_URL } from '@/lib/site';
+
+export type KBColor = 'cyan' | 'violet' | 'amber' | 'rose';
+export type KBEntry = { id: string; c: KBColor; title: string; keywords: string; answer: string; follow: string };
+
+// Knowledge base for "Ask my AI": each passage has a title, extra keywords (weighted higher in the
+// TF-IDF index), an answer and a follow-up question. `c` colours its dot on the knowledge map.
+export const KB: KBEntry[] = [
+  { id: 'role', c: 'cyan', title: 'Current role', keywords: 'work works working job employer company hitech current position role office',
+    answer: `Nishan is an AI Engineer at ${SITE.company.name} in Kathmandu, since 2026. HiTech builds business software for SMEs, retailers, restaurants and chartered accountants across Nepal, and his job is bringing AI into that kind of software.`,
+    follow: 'What is his tech stack?' },
+  { id: 'stack', c: 'violet', title: 'Tech stack', keywords: 'tech stack technologies tools skills uses toolkit',
+    answer: 'His stack spans three layers. AI: LLMs, RAG, AI agents, LangChain, ChromaDB, Hugging Face, Llama 3.1 and Streamlit. Full-stack: React, Node.js, Express, MongoDB, Django, PostgreSQL and REST APIs. DevOps: Docker, CI/CD, Nginx, Linux and Git. Underneath it all: Python, Java and DSA.',
+    follow: 'Tell me about the RAG project' },
+  { id: 'ai', c: 'cyan', title: 'AI skills', keywords: 'ai llm llms generative genai rag langchain chromadb llama hugging face embeddings vector database machine learning',
+    answer: 'On the AI side he works with LLMs, retrieval-augmented generation (RAG), LangChain, ChromaDB, Hugging Face embedding models and Llama 3.1 served through Groq, and he ships demos with Streamlit.',
+    follow: 'Does he build AI agents?' },
+  { id: 'agents', c: 'cyan', title: 'AI agents', keywords: 'agent agents agentic tool tools calling function functions autonomous planning workflow automation',
+    answer: 'Yes. He builds AI agents that plan, call tools (function calling) and check the results before they answer, connected to real data and APIs. The simulated trace in the What I build section shows the kind of loop he designs.',
+    follow: 'Does he know DevOps?' },
+  { id: 'fullstack', c: 'violet', title: 'Full-stack skills', keywords: 'full stack fullstack web developer frontend backend react node express mongodb mern django postgresql rest api apis javascript',
+    answer: 'He started as a full-stack developer: React, Node.js, Express and MongoDB (the MERN stack), plus Python Django with PostgreSQL, and REST APIs in between.',
+    follow: 'Does he know DevOps?' },
+  { id: 'devops', c: 'amber', title: 'DevOps skills', keywords: 'devops docker container containers ci cd pipeline pipelines nginx linux server servers deploy deployment git cloud',
+    answer: 'Yes. After full-stack work he moved into DevOps: Docker, CI/CD pipelines, Nginx, Linux servers and Git. That’s why his AI projects come with the deployment, not just a notebook.',
+    follow: 'Tell me about the RAG project' },
+  { id: 'rag', c: 'cyan', title: 'RAG AI Document Assistant', keywords: 'rag project projects pdf document documents assistant chat upload pipeline mmr groq retrieval featured',
+    answer: 'The RAG AI Document Assistant lets you upload a PDF and chat with it. It loads the PDF with PyPDFLoader, splits it into 500-character chunks with a 50-character overlap, embeds them with all-MiniLM-L6-v2, stores them in ChromaDB, retrieves with MMR and asks Llama 3.1 on Groq to answer with page sources. The interface is built with Streamlit.',
+    follow: 'Is there a live demo?' },
+  { id: 'demo', c: 'cyan', title: 'Live demo', keywords: 'demo live try link url online hosted streamlit app play',
+    answer: `Yes. The RAG AI Document Assistant has a live Streamlit demo you can try: ${DEMO_URL}`,
+    follow: 'What other AI projects has he built?' },
+  { id: 'other', c: 'cyan', title: 'Other AI projects', keywords: 'other projects projects resume extractor chatbot book information extractor generative lab notebook experiments portfolio',
+    answer: 'Besides the RAG assistant: a Resume Extractor Chatbot that pulls key details out of resumes, an AI Book Information Extractor that turns book content into structured information, a Python ChatBot, and a Generative AI lab notebook of experiments.',
+    follow: 'Does he know data structures and algorithms?' },
+  { id: 'dsa', c: 'rose', title: 'Data structures & algorithms', keywords: 'dsa data structures structure algorithms algorithm java computer science core fundamentals leetcode problem solving',
+    answer: 'He implemented classic data structures and algorithms from scratch in Java, in his DSA repository on GitHub.',
+    follow: 'What programming languages does he use?' },
+  { id: 'lang', c: 'rose', title: 'Programming languages', keywords: 'language languages programming python java javascript code coding',
+    answer: 'Python for AI and backend work, Java for data structures and algorithms, and JavaScript across the MERN stack.',
+    follow: 'What is his tech stack?' },
+  { id: 'contact', c: 'violet', title: 'Contact', keywords: 'contact email mail reach hire hiring message talk connect linkedin touch',
+    answer: `Email is best: ${SITE.email}. He’s also on LinkedIn at ${SITE.linkedin} and GitHub at ${SITE.github}, or you can use the form in the Contact section.`,
+    follow: 'Where is he based?' },
+  { id: 'location', c: 'amber', title: 'Location', keywords: 'based location live lives city country nepal kathmandu timezone time zone remote',
+    answer: 'He’s based in Kathmandu, Nepal (Nepal Time, UTC+5:45). The Contact section shows his current local time.',
+    follow: 'How can I contact him?' },
+  { id: 'github', c: 'violet', title: 'GitHub activity', keywords: 'github repositories repository repos code open source count activity',
+    answer: `He has 78 public repositories on GitHub, from MERN and Django apps to generative AI experiments and RAG apps: ${SITE.github}`,
+    follow: 'Tell me about the RAG project' },
+  { id: 'journey', c: 'amber', title: 'Background', keywords: 'background journey career experience history path started story education',
+    answer: 'Full-stack first (MERN, Django and Java DSA), then DevOps (Docker, CI/CD, Nginx and Linux), then generative AI, RAG and agents, and now AI Engineer at HiTech since 2026.',
+    follow: 'Where does Nishan work?' },
+  { id: 'site', c: 'rose', title: 'How this site was built', keywords: 'site website portfolio page built made three js threejs html css javascript this assistant tfidf next nextjs react',
+    answer: 'This site is a Next.js app written in TypeScript, with Three.js for the skill constellation. This assistant is a TF-IDF retriever with cosine similarity, running in your browser with no API calls.',
+    follow: 'Tell me about the RAG project' },
+];
+
+export const SUGGESTED_QUESTIONS = [
+  'Where does Nishan work?',
+  'What is his tech stack?',
+  'Tell me about the RAG project',
+  'Does he build AI agents?',
+  'Does he know DevOps?',
+  'How can I contact him?',
+];
