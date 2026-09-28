@@ -1,20 +1,14 @@
-import Navbar from '@/components/nav/Navbar';
+import Hero from '@/components/hero/Hero';
 import ScrollProgress from '@/components/nav/ScrollProgress';
 import { NAV_LINKS } from '@/lib/nav';
 
 // Home page. Sections are added here one module at a time.
-// The placeholders below only exist so the navbar can be tested; each is replaced by its real module.
+// The placeholders below keep the navbar links working until each real section module lands.
 export default function Home() {
   return (
     <>
       <ScrollProgress />
-      <header id="top" className="section" style={{ minHeight: '100vh', display: 'grid', alignItems: 'center' }}>
-        <Navbar />
-        <div className="wrap">
-          <h1 className="display">Module 2:<br /><span className="outline">navbar.</span></h1>
-          <p className="lede">Scroll down: the navbar sticks to the top, the active link lights up and the bar at the top fills.</p>
-        </div>
-      </header>
+      <Hero />
       <main id="main">
         {NAV_LINKS.map(l => (
           <section key={l.id} id={l.id} className="section" style={{ minHeight: '80vh' }}>
