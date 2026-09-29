@@ -12,7 +12,7 @@ export const SITE = {
   // Resume: set `url` to a PDF in /public (e.g. '/resume.pdf') to enable the button.
   resume: { url: '', label: 'Download PDF' },
   // Chatwoot live chat. Paste the website inbox token (Settings → Inboxes → Configuration) to show the widget.
-  chatwoot: { baseUrl: 'https://chat.nishankrai.com.np', websiteToken: 'TAmh8EPCDqLkSDQ9mYvTc12A' },
+  chatwoot: { baseUrl: 'https://chat.nishankrai.com.np', websiteToken: 'cnncLUxgmsoMJXGW7inwyhEg' },
 } as const;
 
 export const DEMO_URL = SITE.ragDemoUrl || `${SITE.github}/RAG-AI-Document-Assistant`;
