@@ -160,6 +160,11 @@ main, footer { position: relative; z-index: 0; }
 @keyframes stepIn { from { opacity: 0; transform: translateY(6px); } }
 @keyframes pop { from { transform: scale(.4); opacity: 0; } }
 
+/* ================= Footer ================= */
+.footer { border-top: 1px solid var(--line); padding: 28px 0 calc(28px + env(safe-area-inset-bottom)); color: var(--muted); font-size: .88rem; }
+.footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.footer p { margin: 0; }
+
 /* ================= Reduced motion ================= */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -2,15 +2,13 @@ import Hero from '@/components/hero/Hero';
 import Services from '@/components/services/Services';
 import ProjectsSection from '@/components/projects/ProjectsSection';
 import AskSection from '@/components/ask/AskSection';
+import Journey from '@/components/journey/Journey';
+import ContactSection from '@/components/contact/ContactSection';
+import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/nav/ScrollProgress';
 import RevealObserver from '@/components/RevealObserver';
-import { NAV_LINKS } from '@/lib/nav';
 
-// Sections not built yet. Their placeholders keep the navbar links working until each module lands.
-const DONE = ['services', 'projects', 'ask'];
-const PENDING = NAV_LINKS.filter(l => !DONE.includes(l.id));
-
-// Home page. Sections are added here one module at a time.
+// Home page. Section order must match NAV_LINKS in lib/nav.ts.
 export default function Home() {
   return (
     <>
@@ -20,15 +18,10 @@ export default function Home() {
         <Services />
         <ProjectsSection />
         <AskSection />
-        {PENDING.map(l => (
-          <section key={l.id} id={l.id} className="section" style={{ minHeight: '80vh' }}>
-            <div className="wrap">
-              <h2 className="sec-title">{l.label}</h2>
-              <p className="sec-sub">Placeholder. The real section arrives in its own module.</p>
-            </div>
-          </section>
-        ))}
+        <Journey />
+        <ContactSection />
       </main>
+      <Footer />
       <RevealObserver />
     </>
   );
