@@ -7,6 +7,7 @@ import ContactSection from '@/components/contact/ContactSection';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/nav/ScrollProgress';
 import RevealObserver from '@/components/RevealObserver';
+import ChatwootWidget from '@/components/ChatwootWidget';
 
 // Home page. Section order must match NAV_LINKS in lib/nav.ts.
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       </main>
       <Footer />
       <RevealObserver />
+      <ChatwootWidget />
     </>
   );
 }
