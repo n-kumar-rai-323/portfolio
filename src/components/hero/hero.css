@@ -15,16 +15,20 @@
 .hero-copy > * { animation: rise .9s cubic-bezier(.2,.8,.2,1) backwards; }
 .hero-copy > :nth-child(2) { animation-delay: .08s; } .hero-copy > :nth-child(3) { animation-delay: .16s; }
 .hero-copy > :nth-child(4) { animation-delay: .24s; } .hero-copy > :nth-child(5) { animation-delay: .32s; }
-.name-line { color: var(--cyan-ink); font-weight: 500; font-size: 1.05rem; margin: 0 0 18px; min-height: 1.6em; }
+.hero-copy > :nth-child(6) { animation-delay: .4s; }
+.name-line { color: var(--muted); font-size: .86rem; margin: 0 0 8px; }
+.ps1 { color: var(--cyan-ink); } .ps2 { color: var(--violet); }
+.who { font-weight: 700; font-size: .92rem; margin: 0 0 20px; min-height: 1.6em; }
+.who .sl { color: var(--muted); font-weight: 400; }
 .caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 2px; background: currentColor; vertical-align: -.18em; animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+
 .status {
   display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 12px; margin: 0 0 28px;
-  border-radius: 999px; border: 1px solid var(--line); background: var(--surface-2); font-size: .9rem; color: var(--muted);
+  border-radius: var(--pill); border: 1px solid var(--line); background: var(--surface-2); font-size: .8rem; color: var(--muted);
 }
 .status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 var(--ok); animation: ping 2.4s infinite; flex: none; }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(74,222,128,.55); } 70%, 100% { box-shadow: 0 0 0 8px rgba(74,222,128,0); } }
-.hero .display { font-size: clamp(3.2rem, 8.4vw, 7.2rem); }
+.hero .display { font-size: clamp(2.6rem, 6.6vw, 5.2rem); }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* 3D constellation */
@@ -46,17 +50,18 @@
 .cloud { position: absolute; inset: 6% 4% 96px; display: none; flex-wrap: wrap; gap: 8px; align-content: center; justify-content: center; }
 .no-3d #scene { display: none; }
 .no-3d .cloud { display: flex; }
-.cloud span { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--c); font-size: .86rem; transition: opacity .3s; box-shadow: 0 0 14px -8px var(--c); }
+.cloud span { padding: 6px 12px; border-radius: var(--pill); border: 1px solid var(--c); font-size: .86rem; transition: opacity .3s; box-shadow: 0 0 14px -8px var(--c); }
 .cloud span.dim { opacity: .22; }
 
 /* Scroll cue */
-.cue { position: absolute; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: 24px; height: 38px; border: 1.5px solid var(--muted); border-radius: 14px; opacity: .7; }
+.cue { position: absolute; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: 24px; height: 38px; border: 1.5px solid var(--muted); border-radius: var(--pill); opacity: .7; }
 .cue span { position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: var(--cyan); animation: cue 1.8s infinite; }
 @keyframes cue { 0% { transform: translateY(0); opacity: 1; } 80%, 100% { transform: translateY(14px); opacity: 0; } }
 
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 4px; padding-top: calc(72px + env(safe-area-inset-top)); padding-bottom: 72px; }
   .hero-3d { order: -1; height: clamp(320px, 74vw, 460px); }
+  .hero .display { font-size: clamp(2.6rem, 12.5vw, 5.2rem); }
 }
 /* Phones: headline first, then the constellation with the legend on one row beneath it. */
 @media (max-width: 620px) {
@@ -64,6 +69,6 @@
   .hero-inner { gap: 20px; padding-top: calc(100px + env(safe-area-inset-top)); padding-bottom: 32px; }
   .hero-3d { order: 0; height: 380px; }
   .legend { flex-wrap: nowrap; gap: 6px; padding: 0; bottom: 30px; }
-  .legend .chip { padding: 5px 10px; min-height: 32px; gap: 6px; font-size: .78rem; white-space: nowrap; }
+  .legend .chip { padding: 5px 8px; min-height: 32px; gap: 5px; font-size: .7rem; white-space: nowrap; }
 }
 @media (prefers-reduced-motion: reduce) { .caret { display: none; } }

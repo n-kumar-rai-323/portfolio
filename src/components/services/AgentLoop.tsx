@@ -23,7 +23,7 @@ export default function AgentLoop({ current }: { current: StepType | null }) {
       <text className="lbl" x="155" y="106" textAnchor="middle">loop until done</text>
       {NODES.map(n => (
         <g key={n.type} className={`ln${current === n.type ? ' on' : ''}`} style={{ '--c': `var(${n.token})` } as React.CSSProperties}>
-          <rect x={n.x} y="20" width="80" height="36" rx="18" />
+          <rect x={n.x} y="20" width="80" height="36" rx="4" />
           <text x={n.x + 40} y="43" textAnchor="middle">{n.label}</text>
         </g>
       ))}

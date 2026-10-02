@@ -12,14 +12,14 @@
 .cap:hover { background: var(--surface-2); }
 .cap[aria-selected="true"] { background: var(--surface); border-color: var(--line); box-shadow: var(--shadow); }
 .cdot { grid-row: span 2; width: 12px; height: 12px; margin-top: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 4px var(--surface-2), 0 0 18px var(--c); }
-.cap-t { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; }
+.cap-t { font-family: var(--mono); font-size: 1.08rem; font-weight: 700; letter-spacing: -.02em; }
 .cap-d { color: var(--muted); }
 
 /* Trace panel */
 .trace { padding: 22px; }
 .trace-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
 .trace-title { margin: 0; font-weight: 700; }
-.sim { font-size: .76rem; color: var(--muted); border: 1px dashed var(--line); border-radius: 999px; padding: 3px 10px; }
+.sim { font-size: .76rem; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--pill); padding: 3px 10px; }
 .loop { width: 100%; height: auto; margin: 16px 0 8px; }
 .loop .wire { stroke: var(--line); stroke-width: 1.5; fill: none; }
 .loop .arrow { fill: var(--muted); }
@@ -43,10 +43,10 @@
 
 /* How I work */
 .process { margin-top: 96px; }
-.process h3 { font-size: 1.5rem; letter-spacing: -.02em; margin: 0; }
+.process h3 { font-size: 1.2rem; letter-spacing: -.02em; margin: 0; }
 .process ol { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; counter-reset: s; }
 .process li { counter-increment: s; border-top: 1px solid var(--line); padding-top: 22px; }
-.process li::before { content: "0" counter(s); display: block; font-weight: 900; font-size: 2.6rem; line-height: 1; letter-spacing: .02em; color: var(--bg); -webkit-text-stroke: 2px var(--muted); paint-order: stroke fill; margin-bottom: 14px; }
+.process li::before { content: "[0" counter(s) "]"; display: block; font: 700 .9rem/1 var(--mono); letter-spacing: .04em; color: var(--cyan-ink); margin-bottom: 14px; }
 .process strong { display: block; font-size: 1.1rem; margin-bottom: 4px; }
 .process p { margin: 0; color: var(--muted); font-size: .95rem; }
 

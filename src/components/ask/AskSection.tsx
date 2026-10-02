@@ -105,7 +105,7 @@ export default function AskSection() {
         </div>
 
         <div className="ask">
-          <div className="panel chat from-left">
+          <div className="panel win chat from-left" data-title="ask-nishan — chat">
             <div className="msgs" ref={msgsRef} role="log" aria-label="Conversation">
               {messages.map(m => (
                 <div key={m.id} className={`bub ${m.role}`}>

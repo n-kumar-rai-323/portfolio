@@ -1,11 +1,11 @@
 /* ================= Contact ================= */
 .contact { --gx: 80%; --gy: 20%; --vx: 15%; --vy: 75%; }
 .contact::after { content: ""; position: absolute; z-index: -1; pointer-events: none; width: 520px; height: 520px; right: -140px; top: 10%; border-radius: 50%; background: radial-gradient(circle, var(--glow-c), transparent 70%); filter: blur(10px); }
-.contact .display { font-size: clamp(3rem, 8vw, 6.6rem); }
+.contact .display { font-size: clamp(1.9rem, 8.6vw, 4.6rem); }
 .ct { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; margin-top: 52px; align-items: start; }
 .ct .lede { margin-top: 0; }
 .clock { display: flex; align-items: center; gap: 16px; padding: 16px 20px; }
-.clock-ico { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 12px; background: var(--surface-2); color: var(--amber-ink); }
+.clock-ico { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: var(--pill); background: var(--surface-2); color: var(--amber-ink); }
 .clock-ico svg { width: 22px; height: 22px; }
 .clock time { font-size: 1.7rem; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .clock-l { color: var(--muted); font-size: .9rem; margin-left: 6px; }
@@ -22,13 +22,13 @@
 .lrow[aria-disabled="true"] { cursor: not-allowed; }
 .lrow[aria-disabled="true"] .v { color: var(--muted); }
 .cform { padding: 26px; }
-.cform h3 { margin: 0 0 16px; font-size: 1.3rem; letter-spacing: -.02em; }
+.cform h3 { margin: 0 0 16px; font-size: 1.1rem; letter-spacing: -.02em; }
 .topics { border: 0; padding: 0; margin: 0; min-width: 0; }
 .topics legend { font-weight: 500; font-size: .92rem; margin-bottom: 8px; padding: 0; }
 .topic-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .topic { position: relative; }
 .topic input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
-.topic span { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); font-size: .86rem; font-weight: 500; cursor: pointer; transition: all .2s; }
+.topic span { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 14px; border-radius: var(--pill); border: 1px solid var(--line); font-size: .86rem; font-weight: 500; cursor: pointer; transition: all .2s; }
 .topic span:hover { border-color: var(--cyan); }
 .topic input:checked + span { background: var(--text); color: var(--bg); border-color: var(--text); }
 .topic input:focus-visible + span { outline: 2px solid var(--cyan); outline-offset: 3px; }
@@ -38,7 +38,7 @@
 .cnt { font-size: .8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .cnt.warn { color: var(--amber-ink); }
 .field input, .field textarea {
-  width: 100%; border-radius: 12px; border: 1px solid var(--line); background: var(--bg);
+  width: 100%; border-radius: var(--pill); border: 1px solid var(--line); background: var(--bg);
   padding: 12px 14px; font-size: 1rem; outline: none; transition: border-color .2s, box-shadow .2s;
 }
 .field textarea { min-height: 140px; resize: vertical; line-height: 1.5; }

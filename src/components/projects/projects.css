@@ -9,7 +9,7 @@
 
 .proj-search {
   display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px;
-  border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2); color: var(--muted);
+  border: 1px solid var(--line); border-radius: var(--pill); background: var(--surface-2); color: var(--muted);
   flex: 1 1 260px; max-width: 320px; transition: border-color .2s;
 }
 .proj-search:focus-within { border-color: var(--cyan); color: var(--text); }
@@ -39,8 +39,9 @@
 .card:hover::before { opacity: 1; }
 .card.feat { border-color: var(--c, var(--cyan)); box-shadow: var(--shadow); }
 
-.card .kind { margin: 0; font-size: .78rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--c, var(--cyan)); }
-.card h3 { margin: 0; font-size: 1.28rem; letter-spacing: -.01em; line-height: 1.25; }
+.card .kind::before { content: "// "; opacity: .6; }
+.card .kind { margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--c, var(--cyan)); }
+.card h3 { margin: 0; font-size: 1.08rem; letter-spacing: -.01em; line-height: 1.25; }
 .card-open {
   background: none; border: 0; padding: 0; text-align: left; font: inherit; color: var(--text); cursor: pointer;
 }
@@ -49,7 +50,7 @@
 
 .pipe { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 0; margin: 0; font-size: .74rem; }
 .pipe li { display: flex; align-items: center; gap: 4px; color: var(--muted); }
-.pipe li span { padding: 3px 9px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); }
+.pipe li span { padding: 3px 9px; border-radius: var(--pill); background: var(--surface-2); border: 1px solid var(--line); }
 .pipe li:not(:last-child)::after { content: "→"; opacity: .5; }
 
 .card .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 6px; }
@@ -77,7 +78,7 @@
 .drawer-foot .btn { flex: 1; }
 
 .d-kind { margin: 0; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; color: var(--cyan-ink); }
-.drawer-body h2 { margin: 8px 0 0; font-size: 1.6rem; letter-spacing: -.01em; }
+.drawer-body h2 { margin: 8px 0 0; font-size: 1.3rem; letter-spacing: -.01em; }
 .d-sum { color: var(--muted); margin: 10px 0 0; }
 .drawer-body h3 { font-size: 1rem; margin: 26px 0 10px; }
 .d-body-t { color: var(--muted); margin: 0; }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Roboto } from 'next/font/google';
+import { JetBrains_Mono, Roboto } from 'next/font/google';
 import { SITE } from '@/lib/site';
 import './globals.css';
 
@@ -8,6 +8,13 @@ const roboto = Roboto({
   weight: ['300', '400', '500', '700', '900'],
   display: 'swap',
   variable: '--font-roboto',
+});
+
+// Monospace face for headings, labels and controls: the terminal look.
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono',
 });
 
 const description =
@@ -68,7 +75,7 @@ const themeScript = `(function(){var d=document.documentElement;d.classList.add(
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={roboto.variable} suppressHydrationWarning>
+    <html lang="en" className={`${roboto.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

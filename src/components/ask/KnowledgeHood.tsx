@@ -28,7 +28,7 @@ export default function KnowledgeHood({ step, tokensShown, top }: Props) {
   }, [top]);
 
   return (
-    <div className="panel hood from-right">
+    <div className="panel win hood from-right" data-title="retrieval.log">
       <p className="hood-title">Under the hood: <span>TF-IDF + cosine similarity</span></p>
       <ol className="pills" aria-label="Pipeline steps">
         {PILL_LABELS.map((label, i) => (

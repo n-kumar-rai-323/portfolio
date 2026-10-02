@@ -45,7 +45,8 @@ export default function Hero() {
       <Navbar />
       <div className="wrap hero-inner">
         <div className="hero-copy" ref={copy}>
-          <p className="name-line">{SITE.name} / <TypedRole /></p>
+          <p className="name-line" aria-hidden="true"><span className="ps1">nishan@kathmandu</span>:<span className="ps2">~</span>$ whoami</p>
+          <p className="who">{SITE.name} <span className="sl">/</span> <TypedRole /></p>
           <p className="status"><span className="dot" aria-hidden="true" />AI Engineer at HiTech Solutions and Services, Kathmandu</p>
           <h1 className="display">I build AI<br /><span className="outline">that ships.</span></h1>
           <p className="lede">

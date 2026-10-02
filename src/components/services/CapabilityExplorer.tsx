@@ -95,7 +95,7 @@ export default function CapabilityExplorer() {
         ))}
       </div>
 
-      <div className="panel trace from-right" id="trace" role="tabpanel" aria-labelledby={`tab-${capIdx}`} ref={panel}>
+      <div className="panel win trace from-right" data-title="agent-trace — simulated" id="trace" role="tabpanel" aria-labelledby={`tab-${capIdx}`} ref={panel}>
         <div className="trace-head">
           <p className="trace-title">Simulated trace</p>
           <span className="sim">Example run, not live data</span>

@@ -69,7 +69,7 @@ export default function ContactForm() {
   );
 
   return (
-    <form className="panel cform zoom" noValidate aria-labelledby="cfTitle" onSubmit={onSubmit}>
+    <form className="panel win cform zoom" data-title="new-message.txt" noValidate aria-labelledby="cfTitle" onSubmit={onSubmit}>
       {!done ? (
         <div>
           <h3 id="cfTitle">Send a message</h3>
