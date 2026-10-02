@@ -1,18 +1,20 @@
 import type { Metadata, Viewport } from 'next';
-import { JetBrains_Mono, Roboto } from 'next/font/google';
+import localFont from 'next/font/local';
 import { SITE } from '@/lib/site';
 import './globals.css';
 
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700', '900'],
+// Fonts are self-hosted (Latin variable files in ./fonts), so the build never depends on fetching Google Fonts.
+const roboto = localFont({
+  src: './fonts/roboto-latin.woff2',
+  weight: '100 900',
   display: 'swap',
   variable: '--font-roboto',
 });
 
 // Monospace face for headings, labels and controls: the terminal look.
-const mono = JetBrains_Mono({
-  subsets: ['latin'],
+const mono = localFont({
+  src: './fonts/jetbrains-mono-latin.woff2',
+  weight: '100 800',
   display: 'swap',
   variable: '--font-mono',
 });
