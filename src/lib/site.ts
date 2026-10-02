@@ -2,9 +2,11 @@
 export const SITE = {
   name: 'Nishan Kumar Rai',
   role: 'AI Engineer',
-  url: 'https://n-kumar-rai-323.github.io/',
+  url: 'https://nishankrai.com.np/',
   email: 'nishanrai341@gmail.com',
   github: 'https://github.com/n-kumar-rai-323',
+  // Public repository count shown in the contact links and the Ask my AI notes.
+  publicRepos: 80,
   linkedin: 'https://www.linkedin.com/in/nishankumarrai/',
   company: { name: 'HiTech Solutions and Services Pvt. Ltd.', url: 'https://www.hitechnepal.com.np' },
   // Paste the Streamlit URL of the live RAG demo. While empty, demo links fall back to the GitHub repo.

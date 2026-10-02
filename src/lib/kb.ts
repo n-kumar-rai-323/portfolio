@@ -46,7 +46,7 @@ export const KB: KBEntry[] = [
     answer: 'He’s based in Kathmandu, Nepal (Nepal Time, UTC+5:45). The Contact section shows his current local time.',
     follow: 'How can I contact him?' },
   { id: 'github', c: 'violet', title: 'GitHub activity', keywords: 'github repositories repository repos code open source count activity',
-    answer: `He has 78 public repositories on GitHub, from MERN and Django apps to generative AI experiments and RAG apps: ${SITE.github}`,
+    answer: `He has ${SITE.publicRepos} public repositories on GitHub, from MERN and Django apps to generative AI experiments and RAG apps: ${SITE.github}`,
     follow: 'Tell me about the RAG project' },
   { id: 'journey', c: 'amber', title: 'Background', keywords: 'background journey career experience history path started story education',
     answer: 'Full-stack first (MERN, Django and Java DSA), then DevOps (Docker, CI/CD, Nginx and Linux), then generative AI, RAG and agents, and now AI Engineer at HiTech since 2026.',

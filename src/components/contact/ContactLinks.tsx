@@ -36,7 +36,7 @@ export default function ContactLinks() {
       </li>
       <li>
         <a className="lrow" href={SITE.github} target="_blank" rel="noopener">
-          <span className="k">GitHub</span><span className="v">{SITE.github.split('/').pop()}</span><span className="a">78 public repos</span>
+          <span className="k">GitHub</span><span className="v">{SITE.github.split('/').pop()}</span><span className="a">{SITE.publicRepos} public repos</span>
         </a>
       </li>
       <li>
