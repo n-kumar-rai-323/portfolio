@@ -58,5 +58,12 @@
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 4px; padding-top: calc(72px + env(safe-area-inset-top)); padding-bottom: 72px; }
   .hero-3d { order: -1; height: clamp(320px, 74vw, 460px); }
 }
-@media (max-width: 620px) { .cue { display: none; } .hero-inner { padding-bottom: 48px; } }
+/* Phones: headline first, then the constellation with the legend on one row beneath it. */
+@media (max-width: 620px) {
+  .cue { display: none; }
+  .hero-inner { gap: 20px; padding-top: calc(100px + env(safe-area-inset-top)); padding-bottom: 32px; }
+  .hero-3d { order: 0; height: 380px; }
+  .legend { flex-wrap: nowrap; gap: 6px; padding: 0; bottom: 30px; }
+  .legend .chip { padding: 5px 10px; min-height: 32px; gap: 6px; font-size: .78rem; white-space: nowrap; }
+}
 @media (prefers-reduced-motion: reduce) { .caret { display: none; } }

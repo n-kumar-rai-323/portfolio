@@ -46,7 +46,7 @@
 .process h3 { font-size: 1.5rem; letter-spacing: -.02em; margin: 0; }
 .process ol { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; counter-reset: s; }
 .process li { counter-increment: s; border-top: 1px solid var(--line); padding-top: 22px; }
-.process li::before { content: "0" counter(s); display: block; font-weight: 900; font-size: 2.6rem; line-height: 1; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1px var(--muted); margin-bottom: 14px; }
+.process li::before { content: "0" counter(s); display: block; font-weight: 900; font-size: 2.6rem; line-height: 1; letter-spacing: .02em; color: var(--bg); -webkit-text-stroke: 2px var(--muted); paint-order: stroke fill; margin-bottom: 14px; }
 .process strong { display: block; font-size: 1.1rem; margin-bottom: 4px; }
 .process p { margin: 0; color: var(--muted); font-size: .95rem; }
 

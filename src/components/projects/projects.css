@@ -86,5 +86,5 @@
 
 @media (max-width: 560px) {
   .proj-controls { flex-direction: column; align-items: stretch; }
-  .proj-search { max-width: none; }
+  .proj-search { flex: none; max-width: none; }
 }

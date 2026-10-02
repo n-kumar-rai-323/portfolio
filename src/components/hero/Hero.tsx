@@ -18,10 +18,14 @@ export default function Hero() {
   useEffect(() => {
     const c = copy.current, s = scene.current;
     if (!c || !s) return;
-    if (reduced) { c.style.transform = c.style.opacity = s.style.transform = s.style.opacity = ''; return; }
+    const clear = () => { c.style.transform = c.style.opacity = s.style.transform = s.style.opacity = ''; };
+    if (reduced) { clear(); return; }
+    // Stacked layout: the hero is taller than the screen, so fading it would dim text still being read.
+    const stacked = matchMedia('(max-width: 900px)');
     let raf = 0;
     const update = () => {
       raf = 0;
+      if (stacked.matches) { clear(); return; }
       const h = hero.current?.offsetHeight || innerHeight;
       if (scrollY > h * 1.1) return;
       const p = Math.min(Math.max(scrollY / h, 0), 1);
