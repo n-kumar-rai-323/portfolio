@@ -41,6 +41,12 @@
 
 .card .kind::before { content: "// "; opacity: .6; }
 .card .kind { margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--c, var(--cyan)); }
+.wip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: var(--pill);
+  border: 1px dashed var(--amber); color: var(--amber-ink); font: 700 .7rem/1.6 var(--mono); letter-spacing: .02em; text-transform: none;
+}
+.wip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); animation: blink 1.4s steps(1) infinite; }
+.card .kind .wip { margin-left: 10px; }
 .card h3 { margin: 0; font-size: 1.08rem; letter-spacing: -.01em; line-height: 1.25; }
 .card-open {
   background: none; border: 0; padding: 0; text-align: left; font: inherit; color: var(--text); cursor: pointer;

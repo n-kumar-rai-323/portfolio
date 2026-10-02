@@ -6,6 +6,8 @@ export type Project = {
   kind: string;
   featured?: boolean;
   demo?: boolean;
+  // Still being built: shows an "In progress" badge and no GitHub link, since the code isn't published yet.
+  wip?: boolean;
   short: string;
   tech: string[];
   pipeline?: string[];
@@ -32,6 +34,21 @@ export const PROJECTS: Project[] = [
       'Streamlit wraps it all in a simple upload-and-chat interface.',
     ],
     outcome: 'A working, deployed document assistant: upload a PDF, ask in plain language and get an answer with page sources you can check.',
+  },
+  {
+    repo: 'smart-inventory-agent', title: 'Smart Inventory Agent', cat: 'ai', kind: 'Machine learning + agent', wip: true,
+    short: 'A demand-forecasting model plus an AI agent that turns its predictions into reorder suggestions for small retailers.',
+    tech: ['Python', 'pandas', 'scikit-learn', 'LangChain', 'Llama 3.1', 'PostgreSQL', 'Docker'],
+    pipeline: ['Sales data', 'Features', 'Forecast model', 'Agent tools', 'Reorder plan'],
+    problem: 'Small shops reorder stock by gut feeling, so fast sellers run out and slow ones sit on the shelf.',
+    how: [
+      'Clean past sales data with pandas and build features such as weekday, season and festival weeks.',
+      'Train a scikit-learn model to forecast next week’s demand per item, and compare it against a simple baseline.',
+      'Expose the forecast, current stock and supplier details as tools the agent can call.',
+      'A LangChain agent on Llama 3.1 plans, calls those tools and explains each reorder suggestion in plain language.',
+      'Nothing is ordered automatically: a person approves every suggestion.',
+    ],
+    outcome: 'In progress. The data pipeline and baseline forecast come first, then the agent. The code and results will be published here once it works end to end.',
   },
   {
     repo: 'Resume_Extractor_Chatbot', title: 'Resume Extractor Chatbot', cat: 'ai', kind: 'LLM extraction',

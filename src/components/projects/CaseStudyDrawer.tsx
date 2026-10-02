@@ -70,14 +70,16 @@ export default function CaseStudyDrawer({ index, onClose, onStep }: Props) {
               <p className="d-sum">{p.short}</p>
               <h3>The problem</h3>
               <p className="d-body-t">{p.problem}</p>
-              <h3>How it works</h3>
+              <h3>{p.wip ? 'The plan' : 'How it works'}</h3>
               <ol className="d-steps">{p.how.map(s => <li key={s}>{s}</li>)}</ol>
-              <h3>Outcome</h3>
+              <h3>{p.wip ? 'Status' : 'Outcome'}</h3>
               <p className="d-body-t">{p.outcome}</p>
               <h3>Built with</h3>
               <ul className="tags">{p.tech.map(t => <li key={t}>{t}</li>)}</ul>
               <div className="d-actions">
-                <a className="btn btn-primary btn-sm" href={`${SITE.github}/${p.repo}`} target="_blank" rel="noopener">View code on GitHub</a>
+                {p.wip
+                  ? <span className="wip">In progress · code not published yet</span>
+                  : <a className="btn btn-primary btn-sm" href={`${SITE.github}/${p.repo}`} target="_blank" rel="noopener">View code on GitHub</a>}
                 {p.demo && <a className="btn btn-ghost btn-sm" href={DEMO_URL} target="_blank" rel="noopener">Open live demo</a>}
               </div>
             </>

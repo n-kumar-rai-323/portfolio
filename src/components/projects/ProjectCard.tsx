@@ -25,7 +25,7 @@ export default function ProjectCard({ project: p, index, query, onOpen }: Props)
       style={{ '--i': index % 3, '--c': `var(${CATS[p.cat].token})` } as React.CSSProperties}
       onPointerMove={spot}
     >
-      <p className="kind">{p.kind}</p>
+      <p className="kind">{p.kind}{p.wip && <span className="wip">In progress</span>}</p>
       <h3>
         <button className="card-open" type="button" aria-haspopup="dialog" onClick={onOpen}>
           <span className="t">{highlight(p.title, query)}</span>
@@ -44,7 +44,7 @@ export default function ProjectCard({ project: p, index, query, onOpen }: Props)
       </ul>
       <div className="foot">
         {p.demo && <a className="btn btn-primary btn-sm live" href={DEMO_URL} target="_blank" rel="noopener">Try it live</a>}
-        <span className="more">Read the case study</span>
+        <span className="more">{p.wip ? 'Read the plan' : 'Read the case study'}</span>
       </div>
     </article>
   );
